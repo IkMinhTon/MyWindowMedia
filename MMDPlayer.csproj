@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AEB2B1C-FA5C-4D87-98CB-97D497ABBBEE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MMDPlayer</RootNamespace>
+    <AssemblyName>MMDPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MMDPlayer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MACTrackBarLib, Version=1.0.5896.38740, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MACTrackBarLib.dll.1.0.2\lib\net40\MACTrackBarLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAPICodePack-Core.1.1.0.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GUI\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LibraryForm.Designer.cs">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PlayListDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PlayListDetails.Designer.cs">
+      <DependentUpon>PlayListDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PlayListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\PlayListView.Designer.cs">
+      <DependentUpon>PlayListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SongList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SongList.Designer.cs">
+      <DependentUpon>SongList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SongView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SongView.Designer.cs">
+      <DependentUpon>SongView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SongViewDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SongViewDetails.Designer.cs">
+      <DependentUpon>SongViewDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\WinMedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\WinMedia.Designer.cs">
+      <DependentUpon>WinMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MediaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MediaForm.Designer.cs">
+      <DependentUpon>MediaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Object\Media.cs" />
+    <Compile Include="Object\PlayList.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="GUI\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LibraryForm.resx">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PlayListDetails.resx">
+      <DependentUpon>PlayListDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PlayListView.resx">
+      <DependentUpon>PlayListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SongList.resx">
+      <DependentUpon>SongList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SongView.resx">
+      <DependentUpon>SongView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SongViewDetails.resx">
+      <DependentUpon>SongViewDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\WinMedia.resx">
+      <DependentUpon>WinMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MediaForm.resx">
+      <DependentUpon>MediaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="Resources\1.jpg" />
+    <None Include="Resources\976562.jpg" />
+    <None Include="Resources\books.png" />
+    <Content Include="Resources\close.png" />
+    <None Include="Resources\delete.png" />
+    <Content Include="Resources\exit_Fullscreen.bmp" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\forward-button-1.png" />
+    <None Include="Resources\forward-button-FFD5.png" />
+    <None Include="Resources\forward-button-1-white.png" />
+    <None Include="Resources\forward-button-white.png" />
+    <None Include="Resources\eye-FFD5.png" />
+    <Content Include="Resources\forward-button.png" />
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\history.png" />
+    <None Include="Resources\image-choose a photo.png" />
+    <None Include="Resources\list-text-FFD5.png" />
+    <None Include="Resources\hide-FFD5.png" />
+    <Content Include="Resources\list-text.png" />
+    <None Include="Resources\logo.png" />
+    <Content Include="Resources\logowithText.png" />
+    <None Include="Resources\loop %281%29-FFD5.png" />
+    <Content Include="Resources\loop %281%29.png" />
+    <None Include="Resources\loop-87DE.png" />
+    <Content Include="Resources\loop.png" />
+    <Content Include="Resources\maximize.png" />
+    <None Include="Resources\mp4.png" />
+    <None Include="Resources\more-white.png" />
+    <Content Include="Resources\music.png" />
+    <None Include="Resources\music1.png" />
+    <None Include="Resources\mute-FFD5.png" />
+    <Content Include="Resources\mute.png" />
+    <Content Include="Resources\MyLogo.png" />
+    <Content Include="Resources\noun_Exit Full Screen_2816.png" />
+    <Content Include="Resources\noun_Fullscreen_51760.png" />
+    <Content Include="Resources\noun_previous_882577.png" />
+    <Content Include="Resources\noun_rewind_2341747.png" />
+    <None Include="Resources\pause-button-FFD5.png" />
+    <None Include="Resources\pause-button-white.png" />
+    <Content Include="Resources\pause-button.png" />
+    <None Include="Resources\play-87DE.png" />
+    <None Include="Resources\play-FFD5.png" />
+    <None Include="Resources\play-and-pause-button.png" />
+    <None Include="Resources\play-and-pause-button-FFD5.png" />
+    <None Include="Resources\PikPng.com_picture-frames-png_930638.png" />
+    <None Include="Resources\play-and-pause-button-white.png" />
+    <None Include="Resources\play-white.png" />
+    <Content Include="Resources\play.png" />
+    <None Include="Resources\previous-butt.png" />
+    <None Include="Resources\previous-button-FFD5.png" />
+    <None Include="Resources\previous-butt-white.png" />
+    <None Include="Resources\previous-button-white.png" />
+    <None Include="Resources\playlist.png" />
+    <Content Include="Resources\previous-button.png" />
+    <None Include="Resources\random-87DE.png" />
+    <None Include="Resources\previous.png" />
+    <None Include="Resources\previous-FFD5.png" />
+    <None Include="Resources\previous-white.png" />
+    <None Include="Resources\random-FFD5.png" />
+    <Content Include="Resources\random.png" />
+    <None Include="Resources\video-marketing.png" />
+    <None Include="Resources\save-white.png" />
+    <None Include="Resources\search-white.png" />
+    <None Include="Resources\social-media.png" />
+    <Content Include="Resources\video-player-withtext.png" />
+    <Content Include="Resources\video-player.png" />
+    <None Include="Resources\volume-FFD5.png" />
+    <Content Include="Resources\volume.png" />
+    <Content Include="Resources\window-minimize-regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
